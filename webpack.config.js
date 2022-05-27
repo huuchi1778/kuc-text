@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = (env = {}) => {
   return {
     entry: {
-      'button-excercise': './src/Button.ts'
+      'kuc-text': './src/Textbox.ts'
     },
     module: {
       rules: [
