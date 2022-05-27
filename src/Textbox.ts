@@ -1,16 +1,15 @@
+// @ts-nocheck
 import {html, css, LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import {TextboxStyle} from './TextboxStyle';
 
-// document.addEventListener('kuc:onchange', e => {
-//   console.log('Changing...');
-//   // @ts-ignore
-//   console.log(e.detail.value);
-// });
-
 const leftBox = document.getElementById('this-id');
 leftBox.addEventListener('kuc:focus', e => {
   console.log('Focusing on left box');
+});
+leftBox.addEventListener('kuc:onchange', e =>{
+  console.log('New value is: ', e.detail.value);
+  console.log('Old value is: ', e.detail.oldValue);
 });
 
 const rightBox = document.getElementById('that-div');
@@ -25,24 +24,28 @@ export class KucText extends LitElement {
   @property({type: String}) placeholder = '';
   @property({type: String}) value = '';
   @property({type: Boolean}) disabled = false;
-
+  @property({attribute: false}) newValue = null;
+  @property({attribute: false}) oldValue = null;
   // error checking for invalid class name
   static styles = css`${TextboxStyle}`;
 
   protected _handleChange(e) {
+    this.newValue = e.target.value;
     this.dispatchEvent(new CustomEvent('kuc:onchange', {
       detail: {
-        value: e.target.value
+        value: this.newValue,
+        oldValue: this.oldValue
       },
       bubbles: true,
-      composed: true
+      composed: false
     }));
+    this.oldValue = this.newValue;
   }
 
   protected _handleFocus(e) {
     this.dispatchEvent(new CustomEvent('kuc:focus', {
       detail: {
-        value: e.target.value
+        value: e.target.value,
       },
       bubbles: true,
       composed: false
