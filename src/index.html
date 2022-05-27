@@ -3,11 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script type="module" src="https://localhost:8000/button-excercise/dist/bundle.min.js"></script>
-  <title>Button Excercise</title>
+  <script type="module" src="https://pc-002431-1.local:8000/kuc-text/dist/bundle.min.js"></script>
+  <title>KUC Textbox</title>
 </head>
 <body>
-  <custom-button class="normal">Some button text</custom-button>
-  <custom-button class="submit">Another button text</custom-button>
+  <kuc-text 
+    placeholder="Placeholder..." 
+    id="this-id" 
+    className="this-class"
+  ></kuc-text>
+
+  <div id="that-div">
+    <kuc-text 
+      placeholder="Another textbox..." 
+      id="that-id" 
+      className="that-class"
+    ></kuc-text>
+  </div>
 </body>
 </html>
