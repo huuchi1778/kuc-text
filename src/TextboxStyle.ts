@@ -10,6 +10,7 @@ export const TextboxStyle = css`
     box-shadow: 2px 2px 4px #f5f5f5 inset, -2px -2px 4px #f5f5f5 inset;
     border: 1px solid #e3e7e8;
     padding: 5px 10px;
+    box-sizing:border-box;
   }
 
   input:focus {
