@@ -5,20 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script type="module" src="https://pc-002431-1.local:8000/kuc-text/dist/bundle.min.js"></script>
   <title>KUC Textbox</title>
+  <style>
+    .wrapper{
+      padding: 30px;
+    }
+    kuc-text{
+      margin:30px;
+    }
+  </style>
 </head>
 <body>
-  <kuc-text 
-    placeholder="Placeholder..." 
+  <div class="wrapper">
+    <kuc-text 
+    placeholder="Enter your name..." 
     id="this-id" 
     className="this-class"
   ></kuc-text>
-
-  <div id="that-div">
-    <kuc-text 
-      placeholder="Another textbox..." 
-      id="that-id" 
-      className="that-class"
-    ></kuc-text>
+  
+  <kuc-text 
+    placeholder="" 
+    id="that-id" 
+    className="this-class"
+    value="Chi Nguyen"
+    disabled
+  ></kuc-text>
   </div>
+ 
+
 </body>
 </html>

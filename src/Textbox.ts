@@ -3,20 +3,6 @@ import {html, css, LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import {TextboxStyle} from './TextboxStyle';
 
-const leftBox = document.getElementById('this-id');
-leftBox.addEventListener('kuc:focus', e => {
-  console.log('Focusing on left box');
-});
-leftBox.addEventListener('kuc:onchange', e =>{
-  console.log('New value is: ', e.detail.value);
-  console.log('Old value is: ', e.detail.oldValue);
-});
-
-const rightBox = document.getElementById('that-div');
-rightBox.addEventListener('kuc:focus', e => {
-  console.log('Focusing on right box');
-});
-
 @customElement('kuc-text')
 export class KucText extends LitElement {
   @property({type: String}) className = '';
