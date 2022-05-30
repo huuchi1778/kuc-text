@@ -1,4 +1,3 @@
-// @ts-nocheck
 import {html, css, LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import {TextboxStyle} from './TextboxStyle';
@@ -12,10 +11,10 @@ export class KucText extends LitElement {
   @property({type: Boolean}) disabled = false;
   @property({attribute: false}) newValue = null;
   @property({attribute: false}) oldValue = null;
-  // error checking for invalid class name
+
   static styles = css`${TextboxStyle}`;
 
-  protected _handleChange(e) {
+  protected _handleChange(e: {target: HTMLInputElement}) {
     this.newValue = e.target.value;
     this.dispatchEvent(new CustomEvent('kuc:onchange', {
       detail: {
@@ -28,7 +27,7 @@ export class KucText extends LitElement {
     this.oldValue = this.newValue;
   }
 
-  protected _handleFocus(e) {
+  protected _handleFocus(e: {target: HTMLInputElement}) {
     this.dispatchEvent(new CustomEvent('kuc:focus', {
       detail: {
         value: e.target.value,
