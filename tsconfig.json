@@ -2,6 +2,7 @@
   "compilerOptions": {
     "experimentalDecorators": true,
     "target": "es6",
+    "useDefineForClassFields": false,
     "moduleResolution": "node"
   }
 }
