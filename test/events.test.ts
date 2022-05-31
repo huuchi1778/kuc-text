@@ -15,3 +15,18 @@ describe('Test for focusEvent', () => {
     });
   });
 });
+
+// describe('Test for input event', () => {
+//   it('should trigger on input event ', async () => {
+//     const container = new KucText();
+//     container.value = 'old-value';
+//     const el = await fixture(container) as HTMLInputElement;
+//     el.addEventListener('kuc:onchange', (event: CustomEvent) => {
+//       console.log(event.detail.value);
+//     });
+//     el.value = 'new-value';
+//     el.dispatchEvent(new CustomEvent('kuc:onchange'));
+//     // console.log('New: ', el.shadowRoot.querySelector('input').value);
+//     expect(el.shadowRoot.querySelector('input').value).to.equal('new-value');
+//   });
+// });

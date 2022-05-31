@@ -10,7 +10,7 @@ module.exports = (env = {}) => {
         {
           test: /\.ts?$/,
           use: 'ts-loader'
-        },
+        }
       ],
     },
     resolve: {

@@ -4,40 +4,40 @@ import {TextboxStyle} from './TextboxStyle';
 
 @customElement('kuc-text')
 export class KucText extends LitElement {
-  // @property({type: String}) className = '';
-  // @property({type: String}) id = '';
-  // @property({type: String}) placeholder = '';
-  // @property({type: String}) value = '';
-  // @property({type: Boolean}) disabled = false;
-  // @property({attribute: false}) newValue = null;
-  // @property({attribute: false}) oldValue = null;
-  placeholder: string;
-  value: string;
-  disabled: boolean;
-  newValue: string;
-  oldValue: string;
-  className: string;
-  id: string;
-  static properties = {
-    className: {type: String},
-    id: {type: String},
-    placeholder: {type: String},
-    value: {type: String},
-    disabled: {type: Boolean},
-    newValue: {attribute: false},
-    oldValue: {attribute: false}
-  };
+  @property({type: String}) className = '';
+  @property({type: String}) id = '';
+  @property({type: String}) placeholder = '';
+  @property({type: String}) value = '';
+  @property({type: Boolean}) disabled = false;
+  @property({attribute: false}) newValue = null;
+  @property({attribute: false}) oldValue = null;
+  // placeholder: string;
+  // value: string;
+  // disabled: boolean;
+  // newValue: string;
+  // oldValue: string;
+  // className: string;
+  // id: string;
+  // static properties = {
+  //   className: {type: String},
+  //   id: {type: String},
+  //   placeholder: {type: String},
+  //   value: {type: String},
+  //   disabled: {type: Boolean},
+  //   newValue: {attribute: false},
+  //   oldValue: {attribute: false}
+  // };
 
-  constructor() {
-    super();
-    this.className = '';
-    this.id = '';
-    this.placeholder = '';
-    this.value = '';
-    this.disabled = false;
-    this.newValue = null;
-    this.oldValue = null;
-  }
+  // constructor() {
+  //   super();
+  //   this.className = '';
+  //   this.id = '';
+  //   this.placeholder = '';
+  //   this.value = '';
+  //   this.disabled = false;
+  //   this.newValue = null;
+  //   this.oldValue = null;
+  // }
 
   static styles = css`${TextboxStyle}`;
 
