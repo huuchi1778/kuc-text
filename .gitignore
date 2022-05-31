@@ -2,3 +2,4 @@ node_modules
 .eslintrc.js
 storybook-static
 src/stories/assets
+tsc-out

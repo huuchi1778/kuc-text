@@ -3,6 +3,11 @@
     "experimentalDecorators": true,
     "target": "es6",
     "useDefineForClassFields": false,
-    "moduleResolution": "node"
-  }
+    "moduleResolution": "node",
+    "outDir": "tsc-out",
+    "skipLibCheck": true
+  },
+  "exclude": [
+    "src/stories"
+  ]
 }

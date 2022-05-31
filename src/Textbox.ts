@@ -4,7 +4,7 @@ import {TextboxStyle} from './TextboxStyle';
 
 @customElement('kuc-text')
 export class KucText extends LitElement {
-  @property({type: String}) className = '';
+  @property({type: String}) class = '';
   @property({type: String}) id = '';
   @property({type: String}) placeholder = '';
   @property({type: String}) value = '';
@@ -42,7 +42,7 @@ export class KucText extends LitElement {
       <input 
         type="text" 
         placeholder=${this.placeholder} 
-        class=${this.className}
+        class=${this.class}
         id=${this.id}
         value=${this.value}
         ?disabled="${this.disabled}"
