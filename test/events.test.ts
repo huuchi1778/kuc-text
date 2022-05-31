@@ -16,17 +16,25 @@ describe('Test for focusEvent', () => {
   });
 });
 
-// describe('Test for input event', () => {
-//   it('should trigger on input event ', async () => {
-//     const container = new KucText();
-//     container.value = 'old-value';
-//     const el = await fixture(container) as HTMLInputElement;
-//     el.addEventListener('kuc:onchange', (event: CustomEvent) => {
-//       console.log(event.detail.value);
-//     });
-//     el.value = 'new-value';
-//     el.dispatchEvent(new CustomEvent('kuc:onchange'));
-//     // console.log('New: ', el.shadowRoot.querySelector('input').value);
-//     expect(el.shadowRoot.querySelector('input').value).to.equal('new-value');
-//   });
-// });
+describe('Test for input event', () => {
+  it('should trigger on input event', (done) => {
+    const container = new KucText();
+    container.value = 'old-value';
+    container.addEventListener('kuc:onchange', (event: CustomEvent) => {
+      expect(event.detail.value).to.equal(container.value);
+      expect(event.detail.oldValue).to.equal('old-value');
+      done();
+    });
+    fixture(container).then(()=>{
+      const oldValue = container.value;
+      container.value = 'new-value';
+      const newValue = container.value;
+      container.dispatchEvent(new CustomEvent('kuc:onchange', {
+        detail: {
+          value: newValue,
+          oldValue: oldValue
+        }
+      }));
+    });
+  });
+});
