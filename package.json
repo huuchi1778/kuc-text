@@ -31,7 +31,7 @@
   },
   "scripts": {
     "tsc": "tsc",
-    "test": "tsc && web-test-runner tsc-out/test/**/*.test.js --node-resolve",
+    "test": "rm -rf tsc-out && tsc && web-test-runner tsc-out/test/*.test.js --node-resolve",
     "webpack:build": "webpack --mode production",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",

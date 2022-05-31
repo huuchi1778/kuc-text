@@ -12,6 +12,12 @@ describe('Test for placeholder', () => {
     expect(el.placeholder).to.equal('Sample placeholder');
   });
 
+  it(`should have a placeholder 'Sample placeholder when set by setter`, async () => {
+    const el = await fixture(`<kuc-text></kuc-text>`) as HTMLInputElement;
+    el.placeholder = 'Sample placeholder';
+    expect(el.placeholder).to.equal('Sample placeholder');
+  });
+
   it(`should change from 'sample-placeholder' to 'new-placeholder'`, async () => {
     const el = await fixture(`<kuc-text placeholder='Sample placholder'></kuc-text>`) as HTMLInputElement;
     el.placeholder = 'New placeholder';
